@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Time tracking dashboard</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    body{
+      Family: [Rubik](https://fonts.google.com/specimen/Rubik)
+    }
+    .box {
+      width: 350px;
+      height: 180px;
+      display: table-row-group;
+      table-layout: auto;
+
+      margin-left: 20px;
+      margin-bottom: 35px;
+      border-radius: 10px;
+    }
+
+    #first-con {
+      width:150px;
+      height: 400px;
+      background-color: hsl(235, 46%, 20%);
+      border-radius: 10px;
+
+
+
+    }
+    #con{
+      display: flex;
+      flex-direction: row;
+      margin: auto;
+      background-color: hsl(226, 43%, 10%);
+      justify-content: center;
+      height: 40em;
+      position: relative;
+      align-items: center;
+    }
+    #second-con{
+      width: 40em;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+
+    }
+    #third-con, #fourth-con{
+      display: flex;
+      flex-direction: row;
+    }
+    *{
+      box-sizing: border-box;
+    }
+    #sec-con {
+      background-color:hsl(235, 45%, 61%);
+      width: 150px;
+      height: 270px;
+      border-radius: 10px;
+      padding: 20px;
+
+    }
+    .first-p{
+      margin-left: 20px;
+      margin-top: 18px;
+      color: hsl(235, 45%, 61%);
+    }
+    .first-p:hover{
+      color: white;
+      cursor: pointer;
+
+    }
+    .box-header{
+      height: 30px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: -10px;
+   }
+    .box-body {
+      background-color: hsl(235, 46%, 20%);
+      height: 155px;
+      border-radius: 12px;
+      padding: 15px;
+      color: white;
+      padding-left:18px ;
+      z-index: 2;
+      position: relative;
+      width: 100%;
+      border: none;
+      margin: 0;
+    }
+    .box-body:hover {
+      background-color: hsl(235, 45%, 61%);
+    }
+    .main-img {
+      height: 40px;
+      margin-right: 10px;
+      float: right;
+    }
+    .span1{
+      font-size: 12px;
+      display: block;
+    }
+    .box-body img:hover{
+      color: white;
+      cursor:pointer;
+
+    }
+    .span2{
+      font-size: 30px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      display: block;
+    }
+    #p2{
+      font-size: 10px;
+      color: hsl(235, 46%, 20%);
+      margin-top: 25px;
+      margin-bottom: 5px;
+    }
+    #p1{
+      font-size: 22px;
+      color: white;
+      margin-top: 2px;
+    }
+    @media (max-width:769px) {
+     #con{
+      flex-direction: column;
+      height: 72em;
+      align-items: unset;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: unset;
+
+     }
+     #third-con, #fourth-con{
+      flex-direction: column;
+      width: 100%;
+     }
+     #second-con{
+      width: 90%;
+      height: fit-content;
+     }
+     #first-con{
+     width: 90%;
+     height: 145px;
+     }
+     #sec-con{
+      height: 90px;
+      width: 100%;
+     }
+     .box{
+      width: 100%;
+      margin-left: 0px;
+      margin-bottom: 0px;
+      margin-top: 20px;
+      height: 145px;
+     }
+     body{
+      height: 100%;
+      margin: 0;
+     }
+     .box-body{
+      height: 120px;
+     }
+     .first-p{
+      display: inline;
+      margin-left: 0;
+     }
+     #word-con{
+      display: flex;
+      justify-content: space-around;
+
+     }
+     .span1{
+      display: inline;
+      float: right;
+      margin-top: -23px;
+     }
+     .span2{
+      margin: 0;
+      width: fit-content;
+     }
+     #p1{
+    margin-left: 60px;
+    margin-top: -3px;
+     }
+     #p2{
+
+      margin-left: 62px;
+      margin-top:-49px;
+      margin-bottom: 10px;
+     }
+    }
+  </style>
+</head>
+<body>
+<div id="con">
+ <div id="first-con">
+    <div id="sec-con">
+      <img src="./images/image-jeremy.png" alt=""style="width:50px;">
+
+       <p id="p2"> Report for</p>
+       <p id="p1">Jeremy Robson</p>
+    </div>
+      <div id="word-con">
+        <p class="first-p"onclick=daily()>Daily</p>
+        <p class="first-p"onclick=weekly()>Weekly</p>
+        <p class="first-p"onclick=monthly()>Monthly</p>
+      </div>
+  </div>
+
+  <div id="second-con">
+   <div id="third-con">
+      <div class="box" style="background-color:hsl(15, 100%, 70%);">
+        <div class="box-header">
+          <img src="./images/icon-work.svg" class="main-img">
+         </div>
+        <div class="box-body">
+          <img src="./images/icon-ellipsis.svg" style="height: 4px;float: right;margin-top: 23px;">
+         <p> Work</p>
+         <span id="daily-w" class="span2"> 5hrs </span> <!-- daily -->
+         <span id="prev-w" class="span1"> Yesterday - 7hrs</span>
+         <!-- 32hrs  weekly -->
+          <!-- Previous - 36hrs  weekly -->
+         <!-- 103hrs  monthly -->
+          <!-- Previous - 128hrs monthly -->
+        </div>
+      </div>
+      <div class="box" style="background-color:hsl(195, 74%, 62%);">
+        <div class="box-header">
+          <img src="./images/icon-play.svg"  class="main-img">
+         </div>
+        <div class="box-body">
+          <img src="./images/icon-ellipsis.svg" style="height: 4px;float: right;margin-top: 23px;">
+          <p>Play</p>
+          <span id="daily-p"class="span2"> 1hr </span> <!-- daily -->
+          <span id="prev-p"class="span1"> Yesterday - 2hrs</span> <!--daily -->
+          <!--10hrs  weekly -->
+          <!--Previous - 8hrs weekly -->
+          <!-- 23hrs  monthly -->
+          <!-- Previous - 29hrs  monthly -->
+      </div>
+      </div>
+      <div class="box" style="background-color:hsl(348, 100%, 68%);">
+        <div class="box-header">
+          <img src="./images/icon-study.svg" class="main-img">
+         </div>
+        <div class="box-body">
+          <img src="./images/icon-ellipsis.svg" style="height: 4px;float: right;margin-top: 23px;">
+          <p>Study</p>
+          <span id="daily-s"class="span2"> 0hrs </span> <!-- daily -->
+          <span id="prev-s"class="span1"> Yesterday - 1hr</span> <!-- daily -->
+          <!-- 4hrs weekly -->
+          <!-- Previous - 7hrs  weekly -->
+          <!--13hrs  monthly -->
+          <!-- Previous - 19hrs  monthly -->
+        </div>
+      </div>
+  </div>
+  <div id="fourth-con">
+      <div class="box" style="background-color:hsl(145, 58%, 55%);">
+        <div class="box-header">
+          <img src="./images/icon-exercise.svg"class="main-img">
+        </div>
+        <div class="box-body">
+          <img src="./images/icon-ellipsis.svg" style="height: 4px;float: right;margin-top: 23px;">
+          <p>Exercise</p>
+          <span id="daily-e"class="span2"> 1hr</span> <!-- daily -->
+          <span id="prev-e"class="span1">  Yesterday - 1hr </span><!-- daily -->
+          <!--4hrs  weekly -->
+          <!--Previous - 5hrs  weekly -->
+          <!--11hrs  monthly -->
+          <!-- Previous - 18hrs  monthly -->
+        </div>
+      </div>
+      <div class="box" style="background-color:hsl(264, 64%, 52%);">
+        <div class="box-header">
+          <img src="./images/icon-social.svg" class="main-img">
+        </div>
+            <div class="box-body">
+                <img src="./images/icon-ellipsis.svg" style="height: 4px;float: right;margin-top: 23px;">
+              <p>Social</p>
+              <span id="daily-so"class="span2"> 1hr</span> <!-- daily -->
+              <span id="prev-so"class="span1"> Yesterday - 3hrs </span> <!-- daily -->
+              <!--5hrs  weekly -->
+              <!-- Previous - 10hrs weekly -->
+              <!--21hrs  monthly -->
+              <!-- Previous - 23hrs  monthly -->
+            </div>
+      </div>
+      <div class="box"style="background-color:hsl(43, 84%, 65%);">
+        <div class="box-header">
+          <img src="./images/icon-self-care.svg" class="main-img">
+         </div>
+        <div class="box-body">
+            <img src="./images/icon-ellipsis.svg" style="height: 4px;float: right;margin-top: 23px;">
+           <p>Self Care</p>
+           <span id="daily-se"class="span2"> 0hrs</span> <!-- daily -->
+           <span id="prev-se"class="span1">  Yesterday - 1hr</span> <!-- daily -->
+            <!-- 2hrs weekly -->
+           <!-- Previous - 2hrs weekly -->
+            <!-- 7hrs monthly -->
+           <!--Previous - 11hrs  monthly -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Abubakar Abdulsalam</a>.
+  </div>
+  <script>
+    function daily () {
+      document.getElementById("daily-w").innerHTML="5hrs"
+      document.getElementById("daily-s").innerHTML="0hrs"
+      document.getElementById("daily-e").innerHTML="1hr"
+      document.getElementById("daily-so").innerHTML="1hr"
+      document.getElementById("daily-se").innerHTML="0hrs"
+      document.getElementById("daily-p").innerHTML="1hr"
+      document.getElementById("prev-p").innerHTML="Yesterday - 2hrs"
+      document.getElementById("prev-so").innerHTML="Yesterday - 3hrs"
+      document.getElementById("prev-se").innerHTML="Yesterday - 1hr"
+      document.getElementById("prev-w").innerHTML="Yesterday - 7hrs"
+      document.getElementById("prev-s").innerHTML="Yesterday - 1hr"
+      document.getElementById("prev-e").innerHTML="Yesterday - 1hr"
+    }
+    function weekly () {
+      document.getElementById("daily-w").innerHTML="32hrs"
+      document.getElementById("daily-s").innerHTML="4hrs"
+      document.getElementById("daily-e").innerHTML="4hrs"
+      document.getElementById("daily-so").innerHTML="5hrs"
+      document.getElementById("daily-se").innerHTML="2hrs"
+      document.getElementById("daily-p").innerHTML="10hrs"
+      document.getElementById("prev-p").innerHTML="Last Week- 8hrs"
+      document.getElementById("prev-so").innerHTML="Last Week- 10hrs"
+      document.getElementById("prev-se").innerHTML="Last Week- 2hrs"
+      document.getElementById("prev-w").innerHTML="Last Week- 36hrs"
+      document.getElementById("prev-s").innerHTML="Last Week- 7hrs"
+      document.getElementById("prev-e").innerHTML="Last Week- 5hrs"
+    }
+    function monthly () {
+      document.getElementById("daily-w").innerHTML="103hrs"
+      document.getElementById("daily-s").innerHTML="13hrs"
+      document.getElementById("daily-e").innerHTML="11hrs"
+      document.getElementById("daily-so").innerHTML="21hrs"
+      document.getElementById("daily-se").innerHTML="7hrs"
+      document.getElementById("daily-p").innerHTML="23hrs"
+      document.getElementById("prev-p").innerHTML="Last Month - 29hrs"
+      document.getElementById("prev-so").innerHTML="Last Month - 23hrs"
+      document.getElementById("prev-se").innerHTML="Last Month - 11hrs"
+      document.getElementById("prev-w").innerHTML="Last Month - 128hrs"
+      document.getElementById("prev-s").innerHTML="Last Month - 19hrs"
+      document.getElementById("prev-e").innerHTML="Last Month - 18hrs"
+    }
+  </script>
+</body>
+</html>
